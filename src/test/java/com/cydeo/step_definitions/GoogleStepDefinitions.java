@@ -9,6 +9,11 @@ import org.openqa.selenium.Keys;
 
 public class GoogleStepDefinitions {
 
+    @When("user types apple and clicks enter")
+    public void user_types_and_clicks_enter2() {
+        googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
+    }
+
     @When("user types {string} and clicks enter")
     public void user_types_and_clicks_enter(String searchKeyword) {
         googleSearchPage.searchBox.sendKeys(searchKeyword + Keys.ENTER);
@@ -42,11 +47,6 @@ public class GoogleStepDefinitions {
 
 
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
-
-    @When("user types apple and clicks enter")
-    public void userTypesAppleAndClicksEnter() {
-        googleSearchPage.searchBox.sendKeys("apple" + Keys.ENTER);
-    }
 
     @Then("user sees apple in the title")
     public void userSeesAppleInTheTitle() {
